@@ -1,5 +1,27 @@
+body {
+font-family: 'Red Hat Display', sans-serif;
+}
+
+h1 {
+  font-size: 60px;
+}
+
+h2 {
+  font-size: 35px;
+}
+
 h1, h2 {
   text-align: center;
+}
+
+#resetButton {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  margin-top:15px;
+  width: 80px;
+  padding: 8px 0;
+  background-color: paleturquoise;
 }
 
 .board {
@@ -11,7 +33,7 @@ h1, h2 {
   height: 600px;
   margin: auto;
   justify-content: center;
-  background-color: white;
+  background-color: palegoldenrod;
 }
 
 .circles {
