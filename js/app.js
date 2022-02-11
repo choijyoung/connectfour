@@ -57,13 +57,13 @@ circleArray.forEach((circle, idx) => {
   }
   circles[idx].innerText = gameMarker
 })
+  if (!winner) {
+    gameMessages.innerText = `It is ${playerTurn === 1 ? 'Red' : 'Yellow'} players turn!`;
+  } else {
+    gameMessages.innerText = `${winner === 1 ? 'Red' : 'Yellow'} player has won!`
 }
-console.log(playerTurn)
-if (!winner) {
-  gameMessages.innerText = `It is ${playerTurn === 1 ? 'Red' : 'Yellow'} players turn!`;
-} else {
-  gameMessages.innerText = `${winner === 1 ? 'Red' : 'Yellow'} player has won!`
 }
+
 
 function handleClick(event) {
   let circleIdx = parseInt(event.target.id.replace('boardCircle', ' '))
@@ -74,4 +74,8 @@ function handleClick(event) {
   playerTurn = playerTurn * -1
   render()
   console.log(circleArray)
+}
+
+function getWinner() {
+  
 }
