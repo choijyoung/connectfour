@@ -1,101 +1,166 @@
 /*-------------------------------- Constants --------------------------------*/
-const winningNumbers = [[0, 1, 2, 3], [3, 4, 5, 6], [7, 8, 9, 10], [10, 11, 12, 13], [14, 15, 16, 17], [17, 18, 19, 20], [21, 22, 23, 24], [24, 25, 26, 27], [28, 29, 30, 31], [31, 32, 33, 34], [35, 36, 37, 38], [38, 39, 40, 41], [0, 7, 14, 21], [1, 8, 15, 22], [2, 9, 16, 23], [3, 10, 17, 24], [4, 11, 18, 25], [5, 12, 19, 26], [6, 13, 20, 27], [14, 21, 28, 35], [15, 22, 29, 36], [16, 23, 30, 37], [17, 24, 31, 38], [18, 25, 32, 39], [19, 26, 33, 40], [20, 27, 34, 41], [14, 22, 30, 38], [15, 23, 31, 39], [16, 24, 32, 40], [17, 25, 33, 41], [17, 23, 29, 35], [18, 24, 30, 36], [19, 25, 31, 37], [20, 26, 32, 38], [10, 16, 22, 28], [11, 17, 23, 29], [12, 18, 24, 30], [13, 19, 25, 31], [7, 15, 23, 31], [8, 16, 24, 32], [9, 17, 25, 33], [10, 18, 26, 34], [0, 8, 16, 24], [1, 9, 17, 25], [2, 10, 18, 26], [3, 11, 19, 27], [3, 9, 15, 21], [4, 10, 16, 22], [5, 11, 17, 23], [6, 12, 18, 24], [36, 37, 38, 39], [37, 38, 39, 40], [29, 30, 31, 32], [30, 31, 32, 33], [22, 23, 24, 25], [23, 24, 25, 26], [15, 16, 17, 18], [16, 17, 18, 19], [8, 9, 10, 11], [9, 10, 11, 12], [1, 2, 3, 4], [2, 3, 4, 5], [7, 14, 21, 28], [8, 15, 22, 29], [9, 16, 23, 30], [10, 17, 24, 31], [11, 18, 25, 32], [12, 19, 26, 33], [13, 20, 27, 34]]
-const column1 = [0, 7, 14, 21, 28, 35]
-const column2 = [1, 8, 15, 22, 29, 36]
-const column3 = [2, 9, 16, 23, 30, 37]
-const column4 = [3, 10, 17, 24, 31, 38]
-const column5 = [4, 11, 18, 25, 32, 39]
-const column6 = [5, 12, 19, 26, 33, 40]
-const column7 = [6, 13, 20, 27, 34, 41]
+const winningNumbers = [
+	[ 0, 1, 2, 3 ],
+	[ 41, 40, 39, 38 ],
+	[ 7, 8, 9, 10 ],
+	[ 34, 33, 32, 31 ],
+	[ 14, 15, 16, 17 ],
+	[ 27, 26, 25, 24 ],
+	[ 21, 22, 23, 24 ],
+	[ 20, 19, 18, 17 ],
+	[ 28, 29, 30, 31 ],
+	[ 13, 12, 11, 10 ],
+	[ 35, 36, 37, 38 ],
+	[ 6, 5, 4, 3 ],
+	[ 0, 7, 14, 21 ],
+	[ 41, 34, 27, 20 ],
+	[ 1, 8, 15, 22 ],
+	[ 40, 33, 26, 19 ],
+	[ 2, 9, 16, 23 ],
+	[ 39, 32, 25, 18 ],
+	[ 3, 10, 17, 24 ],
+	[ 38, 31, 24, 17 ],
+	[ 4, 11, 18, 25 ],
+	[ 37, 30, 23, 16 ],
+	[ 5, 12, 19, 26 ],
+	[ 36, 29, 22, 15 ],
+	[ 6, 13, 20, 27 ],
+	[ 35, 28, 21, 14 ],
+	[ 0, 8, 16, 24 ],
+	[ 41, 33, 25, 17 ],
+	[ 7, 15, 23, 31 ],
+	[ 34, 26, 18, 10 ],
+	[ 14, 22, 30, 38 ],
+	[ 27, 19, 11, 3 ],
+	[ 35, 29, 23, 17 ],
+	[ 6, 12, 18, 24 ],
+	[ 28, 22, 16, 10 ],
+	[ 13, 19, 25, 31 ],
+	[ 21, 15, 9, 3 ],
+	[ 20, 26, 32, 38 ],
+	[ 36, 30, 24, 18 ],
+	[ 5, 11, 17, 23 ],
+	[ 37, 31, 25, 19 ],
+	[ 4, 10, 16, 22 ],
+	[ 2, 10, 18, 26 ],
+	[ 39, 31, 23, 15 ],
+	[ 1, 9, 17, 25 ],
+	[ 40, 32, 24, 16 ],
+	[ 9, 17, 25, 33 ],
+	[ 8, 16, 24, 32 ],
+	[ 11, 17, 23, 29 ],
+	[ 12, 18, 24, 30 ],
+	[ 1, 2, 3, 4 ],
+	[ 5, 4, 3, 2 ],
+	[ 8, 9, 10, 11 ],
+	[ 12, 11, 10, 9 ],
+	[ 15, 16, 17, 18 ],
+	[ 19, 18, 17, 16 ],
+	[ 22, 23, 24, 25 ],
+	[ 26, 25, 24, 23 ],
+	[ 29, 30, 31, 32 ],
+	[ 33, 32, 31, 30 ],
+	[ 36, 37, 38, 39 ],
+	[ 40, 39, 38, 37 ],
+	[ 7, 14, 21, 28 ],
+	[ 8, 15, 22, 29 ],
+	[ 9, 16, 23, 30 ],
+	[ 10, 17, 24, 31 ],
+	[ 11, 18, 25, 32 ],
+	[ 12, 19, 26, 33 ],
+	[ 13, 20, 27, 34 ]
+];
+let columns = [
+	[ 35, 28, 21, 14, 7, 0 ],
+	[ 36, 29, 22, 15, 8, 1 ],
+	[ 37, 30, 23, 16, 9, 2 ],
+	[ 38, 31, 24, 17, 10, 3 ],
+	[ 39, 32, 25, 18, 11, 4 ],
+	[ 40, 33, 26, 19, 12, 5 ],
+	[ 41, 34, 27, 20, 13, 6 ]
+];
 
 /*---------------------------- Variables (state) ----------------------------*/
-let winner, circle, circleArray, playerTurn
+let winner, circle, circleArray, playerTurn;
 
 /*------------------------ Cached Element References ------------------------*/
-const gameBoard = document.querySelector(".board")
-const circles = document.querySelectorAll(".circles")
-const gameMessages = document.querySelector("#msg")
-const startBtn = document.querySelector('#startButton')
-const resetBtn = document.querySelector('#resetButton')
-const replayBtn = document.querySelector('#replayButton')
+const gameBoard = document.querySelector('.board');
+const circles = document.querySelectorAll('.circles');
+const gameMessages = document.querySelector('#msg');
+const startBtn = document.querySelector('#startButton');
+const resetBtn = document.querySelector('#resetButton');
+const replayBtn = document.querySelector('#replayButton');
 /*----------------------------- Event Listeners -----------------------------*/
 circles.forEach((circle) => {
-  circle.addEventListener("click", handleClick)
-})
-startBtn.addEventListener("click", () => {
-  console.log("hello")
-})
-resetBtn.addEventListener("click", () => {
-  console.log("world")
-})
-replayBtn.addEventListener("click", () => {
-  console.log("!")
-})
+	circle.addEventListener('click', handleClick);
+});
+startBtn.addEventListener('click', () => {
+	console.log('hello');
+});
+resetBtn.addEventListener('click', () => {
+	console.log('world');
+});
+replayBtn.addEventListener('click', () => {
+	console.log('!');
+});
 /*-------------------------------- Functions --------------------------------*/
 init();
 
 function init() {
-  winner = null;
-  playerTurn = 1;
-  circleArray = [ null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null ];
-  render();
+	winner = null;
+	playerTurn = 1;
+	circleArray = [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null
+	];
+	render();
 }
 
 function render() {
-circleArray.forEach((circle, idx) => {
-  let gameMarker;
-  if (circle === 1) {
-    gameMarker = '🐼';
-  } else if (circle === -1) {
-    gameMarker = '🐤';
-  } else if (circle === null) {
-    gameMarker = ' ';
-  }
-  circles[idx].innerText = gameMarker
-})
-  if (!winner) {
-    gameMessages.innerText = `It is ${playerTurn === 1 ? '🐼' : '🐤'} players turn!`;
-  } else {
-    gameMessages.innerText = `${winner === 1 ? '🐼' : '🐤'} player has won!`
+	circleArray.forEach((circle, idx) => {
+		let gameMarker;
+		if (circle === 1) {
+			gameMarker = '🐼';
+		} else if (circle === -1) {
+			gameMarker = '🐤';
+		} else if (circle === null) {
+			gameMarker = ' ';
+		}
+		circles[idx].innerText = gameMarker;
+	});
+	if (!winner) {
+		gameMessages.innerText = `It is ${playerTurn === 1 ? '🐼' : '🐤'} players turn!`;
+	} else {
+		gameMessages.innerText = `${winner === 1 ? '🐤' : '🐼'} player has won!`;
+	}
+	getWinner();
 }
-getWinner()
-}
-
 
 function handleClick(event) {
-  let circleIdx = parseInt(event.target.id.replace('boardCircle', ' '))
-  if (circleArray[circleIdx] || winner){
-    return
-  }
-  circleArray[circleIdx] = playerTurn
-  playerTurn = playerTurn * -1
-  getWinner()
-  render()
+	let circleIdx = parseInt(event.target.id.replace('boardCircle', ' '));
+	if (circleArray[circleIdx] || winner) {
+		console.log(circleIdx);
+		return;
+	}
+	circleArray[circleIdx] = playerTurn;
+	playerTurn = playerTurn * -1;
+	getWinner();
+	render();
 }
 
-// function getWinner() {
-//   for (i = 0; i < winningNumbers.length; i++) {
-//     let winningValue = winningNumbers[i]
-//       let value1 = winningValue[i][0]
-//       let value2 = winningValue[i][1]
-//       let value3 = winningValue[i][2]
-//       let value4 = winningValue[i][3]
-//     if (circleArray[value1] + circleArray[value2] + circleArray[value3] + circleArray[value4] === 4) {
-//       winner
-//     }
-//   }
+// function selectColumn() {
+// 	let i = 0;
+// 	for (i = 0; i < columns.length; i++) {
+// 		if (columns[i] === null) {
+// 		}
+// 	}
 // }
 
 function getWinner() {
-  for (i = 0; i < winningNumbers.length; i++) {
-    let winningValue = winningNumbers[i]
-      let value1 = winningValue[0]
-      let value2 = winningValue[1]
-      let value3 = winningValue[2]
-      let value4 = winningValue[3]
-    if (circleArray[value1] === circleArray[value2] && circleArray[value2] === circleArray[value3] && circleArray[value3] === circleArray[value4] && circleArray[value4] === circleArray[value1]) {
-      winner = circleArray[value1];
-      
-    }
-  }
-}
+	for (i = 0; i < winningNumbers.length; i++) {
+		if (Math.abs(circleArray[winningNumbers[i][0]] + 
+                 circleArray[winningNumbers[i][1]] + 
+                 circleArray[winningNumbers[i][2]] + 
+                 circleArray[winningNumbers[i][3]]) === 4) {
+        winner = playerTurn; 
+      }
+		}
+	}

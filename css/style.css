@@ -44,3 +44,10 @@ h1, h2 {
   text-align: center;
 }
 
+.circleColor {
+  background-color: red;
+}
+
+.circleColor2 {
+  background-color: cornflowerblue;
+}
