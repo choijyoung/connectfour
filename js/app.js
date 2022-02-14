@@ -127,30 +127,18 @@ function render() {
 function handleClick(event) {
 	let circleIdx = parseInt(event.target.id.replace('boardCircle', ' '));
   const correctIdx = checkPlacement(circleIdx);
-	// if (circleArray[circleIdx] || winner) {
-	// 	return;
-	// }
+
 	circleArray[correctIdx] = playerTurn;
 	playerTurn = playerTurn * -1;
+
+  	if (circleArray[circleIdx] || winner) {
+		return;
+	}
 	getWinner();
 	render();
 }
 
-// function dropColumn(index) {
-//   let selectedCol = columns[index]
-//   console.log(columns[1])
-// 	for (i = 0; i < columns.length; i++) {
-//   } if (selectedCol !== null) {
-//       return
-//   } else if (selectedCol.includes(circleArray[circleIdx])) {
-    
-//   } 
-//   render();
-//   handleClick();
-// }
-
 function checkPlacement(idx) {
-  console.log(idx)
   for (i = idx + 35; i <= 41 && i >= 0; i -= 7){
     if (circleArray[i] === null){
       return i;
