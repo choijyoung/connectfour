@@ -128,7 +128,6 @@ function handleClick(event) {
 	let circleIdx = parseInt(event.target.id.replace('boardCircle', ' '));
   const correctIdx = checkPlacement(circleIdx);
 	circleArray[correctIdx] = playerTurn;
-	console.log(circleIdx)
   playerTurn = playerTurn * -1;
   
   if (winner) {
