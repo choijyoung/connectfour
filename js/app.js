@@ -147,12 +147,13 @@ function handleClick(event) {
 
 function dropColumn(index) {
   let selectedCol = columns[index]
-	for (i = 0; i < columns.length; i++) {
-  } if (selectedCol !== null) {
-      return
-  } else if (selectedCol.includes(circleArray[circleIdx])) {
+  console.log(columns[1])
+	// for (i = 0; i < columns.length; i++) {
+  // } if (selectedCol !== null) {
+  //     return
+  // } else if (selectedCol.includes(circleArray[circleIdx])) {
     
-  } 
+  // } 
   render();
   handleClick();
 }
