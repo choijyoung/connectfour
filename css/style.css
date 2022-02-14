@@ -5,10 +5,12 @@ background-color: rgb(25, 22, 75) ;
 
 h1 {
   font-size: 60px;
+  color: white
 }
 
 h2 {
   font-size: 35px;
+  color: rgb(137, 164, 196);
 }
 
 h1, h2 {
@@ -32,7 +34,7 @@ h1, h2 {
   margin: auto;
   width: 700px;
   height: 600px;
-  background-color: palegoldenrod;
+  background-color: rgb(45, 67, 191);
 }
 
 .circles {
@@ -43,12 +45,4 @@ h1, h2 {
   align-items: center;
   margin: 5px;
   text-align: center;
-}
-
-.playerOneColor {
-  background-color: red;
-}
-
-.playerTwoColor {
-  background-color: cornflowerblue;
 }
