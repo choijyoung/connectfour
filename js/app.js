@@ -70,15 +70,6 @@ const winningNumbers = [
 	[ 12, 19, 26, 33 ],
 	[ 13, 20, 27, 34 ]
 ];
-let columns = [
-	[ 35, 28, 21, 14, 7, 0 ],
-	[ 36, 29, 22, 15, 8, 1 ],
-	[ 37, 30, 23, 16, 9, 2 ],
-	[ 38, 31, 24, 17, 10, 3 ],
-	[ 39, 32, 25, 18, 11, 4 ],
-	[ 40, 33, 26, 19, 12, 5 ],
-	[ 41, 34, 27, 20, 13, 6 ]
-];
 
 /*---------------------------- Variables (state) ----------------------------*/
 let winner, circle, circleArray, playerTurn;
@@ -115,12 +106,12 @@ function init() {
 }
 
 function render() {
-	circleArray.forEach((circle, idx) => {
+	circleArray.forEach((circle, index) => {
 		let gameMarker;
 		if (circle === 1) {
-			gameMarker = circles[idx].style.backgroundColor = "red"
+			gameMarker = circles[index].style.backgroundColor = "red"
 		} else if (circle === -1) {
-			gameMarker = circles[idx].style.backgroundColor = "yellow"
+			gameMarker = circles[index].style.backgroundColor = "yellow"
 		} else if (circle === null) {
 			gameMarker = ' ';
 		}
@@ -135,29 +126,38 @@ function render() {
 
 function handleClick(event) {
 	let circleIdx = parseInt(event.target.id.replace('boardCircle', ' '));
-	if (circleArray[circleIdx] || winner) {
-		console.log(circleIdx);
-		return;
-	}
-	circleArray[circleIdx] = playerTurn;
+  const correctIdx = checkPlacement(circleIdx);
+	// if (circleArray[circleIdx] || winner) {
+	// 	return;
+	// }
+	circleArray[correctIdx] = playerTurn;
 	playerTurn = playerTurn * -1;
 	getWinner();
 	render();
 }
 
-function dropColumn(index) {
-  let selectedCol = columns[index]
-  console.log(columns[1])
-	// for (i = 0; i < columns.length; i++) {
-  // } if (selectedCol !== null) {
-  //     return
-  // } else if (selectedCol.includes(circleArray[circleIdx])) {
+// function dropColumn(index) {
+//   let selectedCol = columns[index]
+//   console.log(columns[1])
+// 	for (i = 0; i < columns.length; i++) {
+//   } if (selectedCol !== null) {
+//       return
+//   } else if (selectedCol.includes(circleArray[circleIdx])) {
     
-  // } 
-  render();
-  handleClick();
+//   } 
+//   render();
+//   handleClick();
+// }
+
+function checkPlacement(idx) {
+  console.log(idx)
+  for (i = idx + 35; i <= 41 && i >= 0; i -= 7){
+    if (circleArray[i] === null){
+      return i;
+    }
+  }
 }
-  
+  // We need a for loop through the first column. index+35 down to zero
 
 
 function getWinner() {
