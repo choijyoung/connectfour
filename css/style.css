@@ -1,5 +1,6 @@
 body {
 font-family: 'Red Hat Display', sans-serif;
+background-color: rgb(25, 22, 75) ;
 }
 
 h1 {
@@ -27,7 +28,7 @@ h1, h2 {
   border: 2px solid black;
   display: grid; 
   grid-template-columns: repeat(7, 100px);
-  grid-template-rows: repeat(6, 100px);
+  grid-template-rows: repeat(7, 100px);
   margin: auto;
   width: 700px;
   height: 600px;
@@ -44,10 +45,10 @@ h1, h2 {
   text-align: center;
 }
 
-.circleColor {
+.playerOneColor {
   background-color: red;
 }
 
-.circleColor2 {
+.playerTwoColor {
   background-color: cornflowerblue;
 }

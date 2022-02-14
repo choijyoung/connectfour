@@ -118,18 +118,17 @@ function render() {
 	circleArray.forEach((circle, idx) => {
 		let gameMarker;
 		if (circle === 1) {
-			gameMarker = '🐼';
+			gameMarker = circles[idx].style.backgroundColor = "red"
 		} else if (circle === -1) {
-			gameMarker = '🐤';
+			gameMarker = circles[idx].style.backgroundColor = "yellow"
 		} else if (circle === null) {
 			gameMarker = ' ';
 		}
-		circles[idx].innerText = gameMarker;
 	});
 	if (!winner) {
-		gameMessages.innerText = `It is ${playerTurn === 1 ? '🐼' : '🐤'} players turn!`;
+		gameMessages.innerText = `It is ${playerTurn === 1 ? '🔴Red🔴' : '🟡Yellow🟡'} players turn!`;
 	} else {
-		gameMessages.innerText = `${winner === 1 ? '🐤' : '🐼'} player has won!`;
+		gameMessages.innerText = `${winner === 1 ? '🟡Yellow🟡' : '🔴Red🔴'} player has won!`;
 	}
 	getWinner();
 }
@@ -146,13 +145,19 @@ function handleClick(event) {
 	render();
 }
 
-// function selectColumn() {
-// 	let i = 0;
-// 	for (i = 0; i < columns.length; i++) {
-// 		if (columns[i] === null) {
-// 		}
-// 	}
-// }
+function dropColumn(index) {
+  let selectedCol = columns[index]
+	for (i = 0; i < columns.length; i++) {
+  } if (selectedCol !== null) {
+      return
+  } else if (selectedCol.includes(circleArray[circleIdx])) {
+    
+  } 
+  render();
+  handleClick();
+}
+  
+
 
 function getWinner() {
 	for (i = 0; i < winningNumbers.length; i++) {
