@@ -100,7 +100,7 @@ init();
 function init() {
 	winner = null;
 	playerTurn = 1;
-	circleArray = [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null
+	circleArray = [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null
 	];
 	render();
 }
@@ -129,7 +129,7 @@ function handleClick(event) {
   const correctIdx = checkPlacement(circleIdx);
 	circleArray[correctIdx] = playerTurn;
   playerTurn = playerTurn * -1;
-  
+  console.log(circleIdx)
   if (winner) {
 		return;
 	}
@@ -138,7 +138,7 @@ function handleClick(event) {
 }
 
 function checkPlacement(idx) {
-  for (i = idx + 35; i <= 41 && i >= 0; i -= 7){
+  for (i = idx + 42; i <= 48 && i >= 0; i -= 7){
     if (circleArray[i] === null){
       return i;
     }
