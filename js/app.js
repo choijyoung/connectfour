@@ -97,22 +97,22 @@ let winner, circle, circleArray, playerTurn;
 const gameBoard = document.querySelector('.board');
 const circles = document.querySelectorAll('.circles');
 const gameMessages = document.querySelector('#msg');
-const startBtn = document.querySelector('#startButton');
 const resetBtn = document.querySelector('#resetButton');
-const replayBtn = document.querySelector('#replayButton');
+const topRow = document.querySelectorAll(".hovercircle")
+console.log(resetBtn)
+// const startBtn = document.querySelector('#startButton');
+// const replayBtn = document.querySelector('#replayButton');
 /*----------------------------- Event Listeners -----------------------------*/
 circles.forEach((circle) => {
 	circle.addEventListener('click', handleClick);
 });
-startBtn.addEventListener('click', () => {
-	console.log('hello');
-});
-resetBtn.addEventListener('click', () => {
-	console.log('world');
-});
-replayBtn.addEventListener('click', () => {
-	console.log('!');
-});
+// startBtn.addEventListener('click', () => {
+// 	console.log('hello');
+// });
+resetBtn.addEventListener('click', init);
+// replayBtn.addEventListener('click', () => {
+// 	console.log('!');
+// });
 /*-------------------------------- Functions --------------------------------*/
 init();
 
@@ -126,13 +126,12 @@ function init() {
 
 function render() {
 	circleArray.forEach((circle, index) => {
-		let gameMarker;
 		if (circle === 1) {
-			gameMarker = circles[index].style.backgroundColor = "red"
+			circles[index].style.backgroundColor = "red"
 		} else if (circle === -1) {
-			gameMarker = circles[index].style.backgroundColor = "yellow"
-		} else if (circle === null) {
-			gameMarker = ' ';
+			circles[index].style.backgroundColor = "yellow"
+		} else {
+			circles[index].style.backgroundColor = "white";
 		}
 	});
 	if (!winner) {
@@ -148,7 +147,7 @@ function handleClick(event) {
   const correctIdx = checkPlacement(circleIdx);
 	circleArray[correctIdx] = playerTurn;
   playerTurn = playerTurn * -1;
-  console.log(circleIdx)
+  console.log(circleArray)
   if (winner) {
 		return;
 	}

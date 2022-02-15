@@ -48,9 +48,9 @@ h1, h2 {
 }
 
 .hovercircle {
-  background-color: rgb(211, 146, 33)
+  background-color: orange !important;
 }
 
 .hovercircle:hover {
-  background-color: blue;
+  background-color: blue !important;
 }
