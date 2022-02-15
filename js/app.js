@@ -94,24 +94,15 @@ const winningNumbers = [
 let winner, circle, circleArray, playerTurn;
 
 /*------------------------ Cached Element References ------------------------*/
-const gameBoard = document.querySelector('.board');
 const circles = document.querySelectorAll('.circles');
 const gameMessages = document.querySelector('#msg');
 const resetBtn = document.querySelector('#resetButton');
-// const startBtn = document.querySelector('#startButton');
-// const replayBtn = document.querySelector('#replayButton');
 /*----------------------------- Event Listeners -----------------------------*/
 circles.forEach((circle) => {
 	circle.addEventListener('click', handleClick);
 });
-
-// startBtn.addEventListener('click', () => {
-// 	console.log('hello');
-// });
 resetBtn.addEventListener('click', init);
-// replayBtn.addEventListener('click', () => {
-// 	console.log('!');
-// });
+
 /*-------------------------------- Functions --------------------------------*/
 init();
 
@@ -137,6 +128,7 @@ function render() {
 		gameMessages.innerText = `It is ${playerTurn === 1 ? '🔴Red🔴' : '🟡Yellow🟡'} players turn!`;
 	} else {
 		gameMessages.innerText = `${winner === 1 ? '🟡Yellow🟡' : '🔴Red🔴'} player has won!`;
+		confetti.start(1000)
 	}
 	getWinner();
 }
@@ -163,7 +155,7 @@ function checkPlacement(idx) {
     }
   }
 }
-  // We need a for loop through the first column. index+35 down to zero
+  // checkPlacement adds 42 to the index of zero to access the bottom of the row. i<=48 and i>=0 ensures that it targets the entire array. i-=7 allows you to place another marker above the one that has been placed.
 
 
 function getWinner() {
@@ -176,3 +168,4 @@ function getWinner() {
       }
 		}
 	}
+
