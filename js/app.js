@@ -98,14 +98,13 @@ const gameBoard = document.querySelector('.board');
 const circles = document.querySelectorAll('.circles');
 const gameMessages = document.querySelector('#msg');
 const resetBtn = document.querySelector('#resetButton');
-const topRow = document.querySelectorAll(".hovercircle")
-console.log(resetBtn)
 // const startBtn = document.querySelector('#startButton');
 // const replayBtn = document.querySelector('#replayButton');
 /*----------------------------- Event Listeners -----------------------------*/
 circles.forEach((circle) => {
 	circle.addEventListener('click', handleClick);
 });
+
 // startBtn.addEventListener('click', () => {
 // 	console.log('hello');
 // });

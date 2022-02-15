@@ -57,5 +57,6 @@ h1, h2 {
 }
 
 .dontclick {
-  cursor: not-allowed !important;
+  pointer-events: none;
+  cursor: not-allowed;
 }
