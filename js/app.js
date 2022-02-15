@@ -147,13 +147,15 @@ function handleClick(event) {
   const correctIdx = checkPlacement(circleIdx);
 	circleArray[correctIdx] = playerTurn;
   playerTurn = playerTurn * -1;
-  console.log(circleArray)
-  if (winner) {
+
+  if (circleArray[circleIdx] || winner) {
 		return;
 	}
 	getWinner();
 	render();
 }
+
+
 
 function checkPlacement(idx) {
   for (i = idx + 42; i <= 48 && i >= 0; i -= 7){

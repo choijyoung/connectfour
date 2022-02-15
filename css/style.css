@@ -48,9 +48,14 @@ h1, h2 {
 }
 
 .hovercircle {
-  background-color: orange !important;
+  background-color: rgb(8, 165, 79) !important;
 }
 
 .hovercircle:hover {
-  background-color: blue !important;
+  background-color: palegreen !important;
+  cursor: pointer;
+}
+
+.dontclick {
+  cursor: not-allowed !important;
 }
