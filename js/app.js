@@ -75,24 +75,24 @@ const winningNumbers = [
 	[ 45, 46, 47, 48 ],
 	[ 42, 36, 30, 24 ],
 	[ 43, 37, 31, 25 ],
-  [ 44, 38, 32, 26 ],
+	[ 44, 38, 32, 26 ],
 	[ 45, 39, 33, 27 ],
 	[ 48, 40, 32, 24 ],
 	[ 47, 39, 31, 23 ],
 	[ 46, 38, 30, 22 ],
 	[ 45, 37, 29, 21 ],
-	[ 21, 28, 35, 42 ], 
+	[ 21, 28, 35, 42 ],
 	[ 22, 29, 36, 43 ],
-	[ 23, 30, 37, 44 ], 
-	[ 24, 31, 38, 45 ], 
-	[ 25, 32, 39, 46 ], 
-	[ 26, 33, 40, 47 ], 
+	[ 23, 30, 37, 44 ],
+	[ 24, 31, 38, 45 ],
+	[ 25, 32, 39, 46 ],
+	[ 26, 33, 40, 47 ],
 	[ 27, 34, 41, 48 ]
 ];
 // Sound effects from zapsplat.com
-const partyHorn = new Audio('../soundeffects/partyhorn.mp3')
-const falling = new Audio('../soundeffects/fallingsound.mp3')
-const clickSound = new Audio('../soundeffects/click.mp3')
+const partyHorn = new Audio('../soundeffects/partyhorn.mp3');
+const falling = new Audio('../soundeffects/fallingsound.mp3');
+const clickSound = new Audio('../soundeffects/click.mp3');
 /*---------------------------- Variables (state) ----------------------------*/
 let winner, circle, circleArray, playerTurn;
 
@@ -106,16 +106,14 @@ circles.forEach((circle) => {
 });
 resetBtn.addEventListener('click', init);
 
-
 /*-------------------------------- Functions --------------------------------*/
 init();
 
 function init() {
 	winner = null;
 	playerTurn = 1;
-	circleArray = [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null
-	];
-	falling.volume = .10
+	circleArray = [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null];
+	falling.volume = 0.1;
 	falling.play();
 	render();
 }
@@ -123,60 +121,58 @@ function init() {
 function render() {
 	circleArray.forEach((circle, index) => {
 		if (circle === 1) {
-			circles[index].style.backgroundColor = "red"
+			circles[index].style.backgroundColor = 'red';
 		} else if (circle === -1) {
-			circles[index].style.backgroundColor = "yellow"
+			circles[index].style.backgroundColor = 'yellow';
 		} else {
-			circles[index].style.backgroundColor = "white";
+			circles[index].style.backgroundColor = 'white';
 		}
 	});
 	if (!winner) {
 		gameMessages.innerText = `It is ${playerTurn === 1 ? '🔴Red🔴' : '🟡Yellow🟡'} players turn!`;
 	} else {
 		gameMessages.innerText = `${winner === 1 ? '🟡Yellow🟡' : '🔴Red🔴'} player has won!`;
-		confetti.start(1000)
-		partyHorn.play()
-		partyHorn.volume = .1
+		confetti.start(1000);
+		partyHorn.play();
+		partyHorn.volume = 0.1;
 	}
 	getWinner();
 }
 
 function handleClick(event) {
 	let circleIdx = parseInt(event.target.id.replace('boardCircle', ' '));
-  const correctIdx = checkPlacement(circleIdx);
+	const correctIdx = checkPlacement(circleIdx);
 	circleArray[correctIdx] = playerTurn;
-  playerTurn = playerTurn * -1;
+	playerTurn = playerTurn * -1;
 
-  if (circleArray[circleIdx] || winner) {
+	if (circleArray[circleIdx] || winner) {
 		return;
 	}
-	console.log("soundeffect")
-	clickSound.volume = 0.1
+	console.log('soundeffect');
+	clickSound.volume = 0.1;
 	clickSound.play();
 	getWinner();
 	render();
 }
 
-
-
 function checkPlacement(idx) {
-  for (i = idx + 42; i <= 48 && i >= 0; i -= 7){
-    if (circleArray[i] === null){
-      return i;
-    }
-  }
+	for (i = idx + 42; i <= 48 && i >= 0; i -= 7) {
+		if (circleArray[i] === null) {
+			return i;
+		}
+	}
 }
-  // checkPlacement adds 42 to the index of zero to access the bottom of the row. i<=48 and i>=0 ensures that it targets the entire array. i-=7 allows you to place another marker above the one that has been placed.
-
+// checkPlacement adds 42 to the index of zero to access the bottom of the row. i<=48 and i>=0 ensures that it targets the entire array. i-=7 allows you to place another marker above the one that has been placed.
 
 function getWinner() {
 	for (i = 0; i < winningNumbers.length; i++) {
-		if (Math.abs(circleArray[winningNumbers[i][0]] + 
-                 circleArray[winningNumbers[i][1]] + 
-                 circleArray[winningNumbers[i][2]] + 
-                 circleArray[winningNumbers[i][3]]) === 4) {
-        winner = playerTurn; 
-      }
+		if (
+			Math.abs(
+				circleArray[winningNumbers[i][0]] +
+					circleArray[winningNumbers[i][1]] +
+					circleArray[winningNumbers[i][2]] +
+					circleArray[winningNumbers[i][3]]) === 4) {
+			winner = playerTurn;
 		}
 	}
-
+}
