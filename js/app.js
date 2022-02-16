@@ -89,7 +89,10 @@ const winningNumbers = [
 	[ 26, 33, 40, 47 ], 
 	[ 27, 34, 41, 48 ]
 ];
-
+// Sound effects from zapsplat.com
+const partyHorn = new Audio('../soundeffects/partyhorn.mp3')
+const falling = new Audio('../soundeffects/fallingsound.mp3')
+const clickSound = new Audio('../soundeffects/click.mp3')
 /*---------------------------- Variables (state) ----------------------------*/
 let winner, circle, circleArray, playerTurn;
 
@@ -103,6 +106,7 @@ circles.forEach((circle) => {
 });
 resetBtn.addEventListener('click', init);
 
+
 /*-------------------------------- Functions --------------------------------*/
 init();
 
@@ -111,6 +115,8 @@ function init() {
 	playerTurn = 1;
 	circleArray = [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null
 	];
+	falling.volume = .10
+	falling.play();
 	render();
 }
 
@@ -129,6 +135,8 @@ function render() {
 	} else {
 		gameMessages.innerText = `${winner === 1 ? '🟡Yellow🟡' : '🔴Red🔴'} player has won!`;
 		confetti.start(1000)
+		partyHorn.volumn = .01
+		partyHorn.play()
 	}
 	getWinner();
 }
@@ -142,6 +150,9 @@ function handleClick(event) {
   if (circleArray[circleIdx] || winner) {
 		return;
 	}
+	console.log("soundeffect")
+	clickSound.volume = 0.1
+	clickSound.play();
 	getWinner();
 	render();
 }
