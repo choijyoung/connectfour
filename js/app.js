@@ -135,8 +135,8 @@ function render() {
 	} else {
 		gameMessages.innerText = `${winner === 1 ? '🟡Yellow🟡' : '🔴Red🔴'} player has won!`;
 		confetti.start(1000)
-		partyHorn.volumn = .01
 		partyHorn.play()
+		partyHorn.volume = .1
 	}
 	getWinner();
 }
