@@ -168,7 +168,7 @@ function getWinner() {
 	for (i = 0; i < winningNumbers.length; i++) {
 		if (
 			Math.abs(
-				circleArray[winningNumbers[i][0]] +
+					circleArray[winningNumbers[i][0]] +
 					circleArray[winningNumbers[i][1]] +
 					circleArray[winningNumbers[i][2]] +
 					circleArray[winningNumbers[i][3]]) === 4) {

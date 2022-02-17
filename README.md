@@ -1,16 +1,15 @@
 # Connect Four! 🔴🟡
 ## Getting Started
-Connect Four is a game that is loved by many and a game that was introduced to us in our childhoods. The objective of the game is to place the token down the board and try and connect four tokens together. 
-* I was inspired to make this game because it is a game that my fiancee and I play all the time in order to decide who does the chores for the day. It **does** get competitive.
+Connect Four is a game that is loved by many and a game that was introduced to us in our childhoods. The objective of the game is to place the token down the board and try and connect four tokens together. I was inspired to make this game because it is a game that my fiancee and I play all the time in order to decide who does the chores for the day. It **does** get competitive.
 ***
 
 ## Play here 😁
 Click to play the game [here](https://connectfouruo.surge.sh/)
 ***
 ## Technologies used
-![](https://img.shields.io/badge/-Javascript-yellow)
-![](https://img.shields.io/badge/-HTML-red)
-![](https://img.shields.io/badge/-CSS-blue)
+![](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 ***
 ## Credit
 [Favicon.io](https://favicon.io/) - Favicon website.
