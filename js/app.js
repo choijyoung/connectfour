@@ -148,7 +148,6 @@ function handleClick(event) {
 	if (circleArray[circleIdx] || winner) {
 		return;
 	}
-	console.log('soundeffect');
 	clickSound.volume = 0.1;
 	clickSound.play();
 	getWinner();

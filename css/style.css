@@ -4,7 +4,7 @@ background-size: cover;
 background-repeat: no-repeat;
 font-family: 'Red Hat Display', sans-serif;
 background-color: rgb(25, 22, 75) ;
-min-height: 100vh;
+height: 100vh;
 }
 
 h1 {
