@@ -21,9 +21,10 @@ Click to play the game [here](https://connectfouruo.surge.sh/)
 
 [Vecteezy](https://www.vecteezy.com/photo/2632227-sound-waves-oscillating-dark-light) - Background image by Titima Ongkantong
 ## Preview
-![Imgur](https://i.imgur.com/j6kOciW.png)
-![Imgur](https://i.imgur.com/aubbN6i.png)
-![Imgur](https://i.imgur.com/ZhZci2V.png)
+<img src="https://i.imgur.com/j6kOciW.png" width="500px"> 
+<img src="https://i.imgur.com/aubbN6i.png" width="500px"> 
+<img src="https://i.imgur.com/ZhZci2V.png" width="500px"> 
+
 ## Ice Box Items
 - I want to implement way to change the drop button to change color depending on whose turn it is.
 - Add a input/bet at the start of the game so that it matches my inspiration for making this game.
