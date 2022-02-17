@@ -1,6 +1,6 @@
 # Connect Four! 🔴🟡
 ## Getting Started
-Connect Four is a game that is loved by many and a game that was introduced to us in our childhoods. The objective of the game is to place the token down the board and try and connect four tokens together. I was inspired to make this game because it is a game that my fiancee and I play all the time in order to decide who does the chores for the day. It **does** get competitive.
+Connect Four is a game that is loved by many and a game that was introduced to us in our childhoods. The objective of the game is to place the token down the board and try to connect four tokens together. I was inspired to make this game because it is a game that my fiancee and I play all the time in order to decide who does the chores for the day. It **does** get competitive.
 ***
 
 ## Play here 😁
@@ -12,9 +12,9 @@ Click to play the game [here](https://connectfouruo.surge.sh/)
 ![](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 ***
 ## Credit
-[Favicon.io](https://favicon.io/) - Favicon website.
+[Favicon.io](https://favicon.io/) - Favicon website
 
-[Zapsplat](https://www.zapsplat.com/music/a-few-safety-pins-drop-into-small-card-box-1/) - Tokens falling down sound.
+[Zapsplat](https://www.zapsplat.com/music/a-few-safety-pins-drop-into-small-card-box-1/) - Tokens falling down sound
 
 [Zapsplat](https://www.zapsplat.com/music/party-horn-blow-paper-tube-roll-out-1/) - Winner sound
 
